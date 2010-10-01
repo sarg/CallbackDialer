@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="prefs_url_summary">Location of callback script</string>
+    <string name="prefs_help">Select Save in menu to continue</string>
+    <string name="hello">Hello World, Dial!</string>
+    <string name="app_name">CallbackDial</string>
+
+<string name="pref_self_number">Self number</string>
+<string name="pref_url">URL of callback script</string>
+<string name="pref_enabled">Enabled</string>
+<string name="pref_summary_self_number">Number which callback script will dial.</string>
+</resources>

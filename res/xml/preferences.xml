@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+
+<EditTextPreference android:enabled="true" android:key="url" android:persistent="true" android:title="@string/pref_url" android:summary="@string/prefs_url_summary"></EditTextPreference>
+<EditTextPreference android:key="self_number" android:persistent="true" android:title="@string/pref_self_number" android:summary="@string/pref_summary_self_number"></EditTextPreference><PreferenceCategory android:orderingFromXml="true" android:title="@string/prefs_help"></PreferenceCategory>
+
+
+</PreferenceScreen>

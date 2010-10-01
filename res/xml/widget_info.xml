@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider
+  xmlns:android="http://schemas.android.com/apk/res/android" android:updatePeriodMillis="8640000" android:configure="com.sarg.dialer.Settings" android:initialLayout="@xml/widget_info" android:minWidth="72dp" android:minHeight="72dp">
+</appwidget-provider>
