@@ -1,0 +1,8 @@
+CallbackDialer is a Android application, and consists of two parts: widget and caller.
+Widget provides toggle button for enable/disable caller.
+Caller makes http query to web callback script on your home server.
+Callback script should accept from and to parameters and create asterisk call file.
+Call file says asterisk to originate calls to "from" and "to" sides and connect them.
+
+Author: Sergey Trofimov <sarg@sarg.org.ru>
+2010
