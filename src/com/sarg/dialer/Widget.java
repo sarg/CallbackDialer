@@ -3,13 +3,12 @@ package com.sarg.dialer;
 import android.app.PendingIntent;
 import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-import android.net.Uri;
 import android.preference.PreferenceManager;
-import android.util.Log;
 import android.widget.RemoteViews;
 
 public class Widget extends AppWidgetProvider {
@@ -44,7 +43,6 @@ public class Widget extends AppWidgetProvider {
         
 		Intent intent = new Intent(context, Widget.class);
 		intent.addCategory(Intent.CATEGORY_ALTERNATIVE);
-		intent.setData(Uri.parse("custom:" + appWidgetId));
 
 		PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, intent, 0);
 		
@@ -65,9 +63,11 @@ public class Widget extends AppWidgetProvider {
 			editor.putBoolean("enabled", ! prefs.getBoolean("enabled", true));
 			editor.commit();
 
-			Uri data = intent.getData();
-			int appWidgetId = Integer.parseInt(data.getSchemeSpecificPart());
-			updateWidget(context, AppWidgetManager.getInstance(context), appWidgetId);
+			AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
+			ComponentName thisAppWidget = new ComponentName(context.getPackageName(), Widget.class.getName());
+			int[] appWidgetIds = appWidgetManager.getAppWidgetIds(thisAppWidget);
+
+			onUpdate(context, appWidgetManager, appWidgetIds);
 		}
 	}
 }

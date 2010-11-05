@@ -15,7 +15,6 @@ import android.util.Log;
 public class DialReceiver extends BroadcastReceiver {
 	@Override
 	public void onReceive(Context context, Intent intent) {
-		// TODO Auto-generated method stub
 		String number = getResultData();
 		Log.e("SARG", "Dialing: " + number);
 		
