@@ -2,9 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	android:orientation="vertical" android:gravity="center"
 	android:layout_width="fill_parent" android:layout_height="fill_parent">
-	<Button android:id="@+id/widget_button"
+	<ImageButton android:id="@+id/widget_button"
+		android:background="@null"
+		android:src="@drawable/icon_off"
         android:gravity="center_horizontal"
-		android:layout_width="wrap_content" android:layout_height="wrap_content"></Button>
-	<TextView android:text="Callback" android:gravity="center_horizontal"
-		android:layout_width="fill_parent" android:layout_height="wrap_content"></TextView>
+		android:layout_width="wrap_content" android:layout_height="wrap_content"></ImageButton>
 </LinearLayout>

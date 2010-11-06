@@ -5,11 +5,8 @@
 		android:debuggable="true">
 		<activity android:name=".Settings" android:label="@string/app_name">
 			<intent-filter>
-				
 				<action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"></action>
 			</intent-filter>
-
-			
 		</activity>
 
 		<receiver android:name=".DialReceiver" android:enabled="true">
@@ -17,10 +14,12 @@
 				<action android:name="android.intent.action.NEW_OUTGOING_CALL"></action>
 			</intent-filter>
 		</receiver>
+
 		<receiver android:name=".Widget">
 			<intent-filter>
 				<action android:name="android.appwidget.action.APPWIDGET_UPDATE"></action>
 				<action android:name="android.appwidget.action.APPWIDGET_ENABLED"></action>
+				<action android:name="android.appwidget.action.APPWIDGET_DISABLED"></action>
 			</intent-filter>
 			<meta-data android:name="android.appwidget.provider"
 				android:resource="@xml/widget_info"></meta-data>
