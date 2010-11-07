@@ -1,22 +1,23 @@
 package com.sarg.dialer;
 
 import java.io.IOException;
+
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.DefaultHttpClient;
+
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
+import android.net.Uri;
 import android.preference.PreferenceManager;
-import android.util.Log;
 
 public class DialReceiver extends BroadcastReceiver {
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		String number = getResultData();
-		Log.e("SARG", "Dialing: " + number);
 		
 		if (placeCall(context, number)) {
 			setResultData(null);
@@ -39,12 +40,11 @@ public class DialReceiver extends BroadcastReceiver {
 		String from = prefs.getString("self_number", null);
 		if (from == null) return false;
 		
-		HttpPost req = new HttpPost(url + "?from=" + from + "&to=" + number);
+		HttpPost req = new HttpPost(url + "?from=" + Uri.encode(from) + "&to=" + Uri.encode(number));
 		
 		try {
 			client.execute(req);
 		} catch (IOException e) {
-			Log.e("SARG", e.toString());
 			return false;
 		}
 		
